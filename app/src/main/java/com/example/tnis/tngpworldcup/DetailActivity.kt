@@ -11,7 +11,9 @@ class DetailActivity: AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         toolbar.title = "ข้อมูลการแข่งขัน"
-
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         supportFragmentManager
                 .beginTransaction()
@@ -19,5 +21,8 @@ class DetailActivity: AppCompatActivity() {
                 .commit()
     }
 
-
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

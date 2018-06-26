@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 
 class DetailFragment: Fragment(){
-
     companion object {
         fun newInstance(): DetailFragment{
             return DetailFragment()

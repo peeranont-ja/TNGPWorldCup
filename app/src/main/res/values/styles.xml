@@ -9,7 +9,7 @@
     </style>
 
     <style name="PrimaryColorToolbar" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
     </style>
 
 </resources>

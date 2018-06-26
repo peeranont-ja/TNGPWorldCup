@@ -9,11 +9,11 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/transparent"
         android:minHeight="?android:attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/PrimaryColorToolbar"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@color/colorPrimary" />
 
     <FrameLayout
         android:id="@+id/container"

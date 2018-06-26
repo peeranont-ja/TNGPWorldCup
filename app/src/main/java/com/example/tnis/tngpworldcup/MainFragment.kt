@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
 
@@ -30,6 +32,8 @@ class MainFragment : Fragment() {
     }
 
     private fun setUpView() {
-
+        Glide.with(context!!)
+                .load("https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/190/90/118254260.jpg")
+                .into(fullscreen_background)
     }
 }

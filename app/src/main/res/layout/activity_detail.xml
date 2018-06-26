@@ -12,7 +12,7 @@
         android:background="@color/colorPrimary"
         android:minHeight="?android:attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/PrimaryColorToolbar"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:titleTextColor="@android:color/white" />
 
     <FrameLayout

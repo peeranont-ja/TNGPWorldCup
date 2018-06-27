@@ -1,5 +1,6 @@
 package com.example.tnis.tngpworldcup
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -35,5 +36,10 @@ class MainFragment : Fragment() {
         Glide.with(context!!)
                 .load("https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/190/90/118254260.jpg")
                 .into(fullscreen_background)
+
+        btn_play.setOnClickListener{
+            val intent = Intent(activity,DetailActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -14,7 +14,6 @@ class DetailActivity: AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
-
         supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.container, DetailFragment.newInstance())

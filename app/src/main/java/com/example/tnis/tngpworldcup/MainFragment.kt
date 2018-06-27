@@ -2,6 +2,7 @@ package com.example.tnis.tngpworldcup
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,13 +34,37 @@ class MainFragment : Fragment() {
     }
 
     private fun setUpView() {
+        //Use Glide to display image from URL show in view ID name's "fullscreen_background"
         Glide.with(context!!)
-                .load("https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/190/90/118254260.jpg")
+                .load("https://img.aws.livestrongcdn.com/" +
+                        "ls-article-image-673/ds-photo/getty/article/190/90/118254260.jpg")
                 .into(fullscreen_background)
 
-        btn_play.setOnClickListener{
-            val intent = Intent(activity,DetailActivity::class.java)
-            startActivity(intent)
+        btn_play.setOnClickListener {
+            //Show Progress bar
+            progressBar.visibility = View.VISIBLE
+
+            //Disable Button for preventing several clicks
+            btn_play.isEnabled = false
+
+            goToNextPage()
         }
+    }
+
+    private fun goToNextPage() {
+        //Add delay to show the Progress bar before intent to next page
+        Handler().postDelayed({
+            //Actions after delay
+            //Hide Progress bar
+            progressBar.visibility = View.GONE
+
+            //Enable button
+            btn_play.isEnabled = true
+
+            //Intent to next page
+            val intent = Intent(activity, DetailActivity::class.java)
+            startActivity(intent)
+
+        }, 1500)
     }
 }

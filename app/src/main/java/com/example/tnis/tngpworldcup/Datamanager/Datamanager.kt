@@ -1,8 +1,20 @@
 package com.example.tnis.tngpworldcup.Datamanager
 
+import android.util.Log
+import android.widget.Toast
 import com.example.tnis.tngpworldcup.Datamanager.Model.Match
+import com.example.tnis.tngpworldcup.Datamanager.Remote.ServiceFactory
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Datamanager(){
+
+    fun getMockFlag(): Array<String> = arrayOf(
+            "http://mblc."
+    )
+
+    fun getMatchInfo(): Call<List<Match>> =  ServiceFactory.worldCupService().getMatchInfo()
 
     fun getMockMatchInfo(): Array<Match> = arrayOf(
             Match(1,
@@ -42,8 +54,5 @@ class Datamanager(){
                     2,
                     1)
     )
-
-
-
 
 }

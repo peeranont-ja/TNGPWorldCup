@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
                 .commit()
 
         val data = Datamanager()
+
         data.getMatchInfo().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
                 Log.d("retrofit",response.body().toString())

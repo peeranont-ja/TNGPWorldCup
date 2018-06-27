@@ -10,9 +10,7 @@ import retrofit2.Response
 
 class Datamanager(){
 
-    fun getMockFlag(): Array<String> = arrayOf(
-            "http://mblc."
-    )
+    fun getFlagURL(country: String): String = "https://mblwc.cleverapps.io/images/${country}.png"
 
     fun getMatchInfo(): Call<List<Match>> =  ServiceFactory.worldCupService().getMatchInfo()
 

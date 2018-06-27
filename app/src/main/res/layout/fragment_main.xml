@@ -17,7 +17,7 @@
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="136dp"
         android:contentDescription="@string/contest_description"
         android:src="@drawable/img_world_cup_trophy_2018" />
 

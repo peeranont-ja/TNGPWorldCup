@@ -1,7 +1,6 @@
-package com.example.tnis.tngpworldcup.Datamanager.Intercep
+package com.example.tnis.tngpworldcup.Datamanager.Interceptor
 
 import android.util.Log
-import com.example.tnis.tngpworldcup.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response

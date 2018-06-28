@@ -5,9 +5,10 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvMatchList"
+        android:id="@+id/list_football_matches"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true" />
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 
 </LinearLayout>

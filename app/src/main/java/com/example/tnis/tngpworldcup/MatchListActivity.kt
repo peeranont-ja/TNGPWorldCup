@@ -17,7 +17,7 @@ class MatchListActivity: AppCompatActivity() {
 
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, DetailFragment.newInstance())
+                .replace(R.id.container, MatchListFragment.newInstance())
                 .commit()
     }
 

@@ -12,7 +12,7 @@
 
 
     <ImageView
-        android:id="@+id/world_cup_trophy"
+        android:id="@+id/image_world_cup_trophy"
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_centerHorizontal="true"
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/world_cup_trophy"
+        android:layout_below="@id/image_world_cup_trophy"
         android:layout_centerHorizontal="true"
         android:text="@string/world_cup_date"
         android:textColor="@android:color/background_dark"
@@ -44,7 +44,7 @@
         android:textSize="22sp" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="20dp"

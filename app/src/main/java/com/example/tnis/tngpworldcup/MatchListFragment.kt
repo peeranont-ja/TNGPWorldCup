@@ -3,13 +3,14 @@ package com.example.tnis.tngpworldcup
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_match_list.*
 
 class MatchListFragment : Fragment() {
-    var matchList  = arrayListOf<MatchItem>()
+    private var matchList = arrayListOf<MatchItem>()
+
     companion object {
         fun newInstance(): MatchListFragment {
             return MatchListFragment()
@@ -20,20 +21,19 @@ class MatchListFragment : Fragment() {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-
-        val rootView = inflater.inflate(R.layout.fragment_detail,
+        return inflater.inflate(R.layout.fragment_match_list,
                 container, false)
-        initInstance(rootView)
-
-        return rootView
     }
 
-    private fun initInstance(rootView: View) {
-        val rvMatchList = rootView.findViewById<RecyclerView>(R.id.rvMatchList)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initInstance()
+    }
 
+    private fun initInstance() {
         mockListData()
-        rvMatchList.layoutManager = LinearLayoutManager(activity)
-        rvMatchList.adapter = MatchListAdapter(matchList)
+        list_football_matches.layoutManager = LinearLayoutManager(activity)
+        list_football_matches.adapter = MatchListAdapter(matchList)
     }
 
     private fun mockListData() {

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,7 +42,7 @@ class MainFragment : Fragment() {
 
         btn_play.setOnClickListener {
             //Show Progress bar
-            progressBar.visibility = View.VISIBLE
+            progress_bar.visibility = View.VISIBLE
 
             //Disable Button for preventing several clicks
             btn_play.isEnabled = false
@@ -61,11 +60,11 @@ class MainFragment : Fragment() {
             btn_play.isEnabled = true
 
             //Intent to next page
-            val intent = Intent(activity, DetailActivity::class.java)
+            val intent = Intent(activity, MatchListActivity::class.java)
             startActivity(intent)
 
             //Hide Progress bar
-            progressBar.visibility = View.GONE
+            progress_bar.visibility = View.GONE
 
         }, 1500)
     }

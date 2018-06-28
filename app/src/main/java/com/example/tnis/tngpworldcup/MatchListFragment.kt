@@ -62,7 +62,6 @@ class MatchListFragment : Fragment() {
                             it.awayScore
                     )
                 }
-
                 list_football_matches.layoutManager = LinearLayoutManager(activity)
                 list_football_matches.adapter = MatchListAdapter(matchList)
             }

@@ -1,4 +1,4 @@
-package com.example.tnis.tngpworldcup
+package com.example.tnis.tngpworldcup.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.example.tnis.tngpworldcup.R
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {

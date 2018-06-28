@@ -13,12 +13,22 @@
         android:text="Group A"
         android:textSize="28sp" />
 
+    <TextView
+        android:id="@+id/text_start_time"
+        android:layout_below="@id/text_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="00:00"
+        android:textSize="16sp" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_group_name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal">
 
         <RelativeLayout
@@ -48,6 +58,7 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/text_score"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

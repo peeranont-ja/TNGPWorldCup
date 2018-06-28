@@ -1,22 +1,24 @@
-package com.example.tnis.tngpworldcup
+package com.example.tnis.tngpworldcup.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.example.tnis.tngpworldcup.R
 import kotlinx.android.synthetic.main.activity_detail.*
 
-class DetailActivity: AppCompatActivity() {
+class MatchListActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        toolbar.title = "ลายละเอียดการแข่งขัน"
+        toolbar.title = "ข้อมูลการแข่งขัน"
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, DetailFragment.newInstance())
+                .replace(R.id.container, MatchListFragment.newInstance())
                 .commit()
     }
 

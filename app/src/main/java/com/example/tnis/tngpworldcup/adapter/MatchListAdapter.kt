@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.tnis.tngpworldcup.datamanager.DataManager
 import com.example.tnis.tngpworldcup.datamanager.model.Match
-import com.example.tnis.tngpworldcup.DetailActivity
+import com.example.tnis.tngpworldcup.ui.DetailActivity
 import com.example.tnis.tngpworldcup.R
 import kotlinx.android.synthetic.main.match_item.view.*
 
@@ -37,6 +37,7 @@ class MatchListAdapter(private var matchList: List<Match>) : RecyclerView.Adapte
 
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+            intent.putExtra("matchInfo", matchList[position])
             holder.itemView.context.startActivity(intent)
         }
 
@@ -54,8 +55,6 @@ class MatchListAdapter(private var matchList: List<Match>) : RecyclerView.Adapte
     override fun getItemCount(): Int {
         return matchList.size
     }
-
-
 }
 
 class MatchListHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

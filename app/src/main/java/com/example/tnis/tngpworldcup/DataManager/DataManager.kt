@@ -1,7 +1,7 @@
-package com.example.tnis.tngpworldcup.Datamanager
+package com.example.tnis.tngpworldcup.DataManager
 
-import com.example.tnis.tngpworldcup.Datamanager.Model.Match
-import com.example.tnis.tngpworldcup.Datamanager.Remote.ServiceFactory
+import com.example.tnis.tngpworldcup.DataManager.Model.Match
+import com.example.tnis.tngpworldcup.DataManager.Remote.ServiceFactory
 
 class DataManager {
 
@@ -9,7 +9,7 @@ class DataManager {
 
     fun getMatchInfo(): retrofit2.Call<List<Match>> =  ServiceFactory.worldCupService().getMatchInfo()
 
-    fun getMockMatchInfo(): Array<Match> = arrayOf(
+    fun getMockMatchInfo(): List<Match> = listOf(
             Match(1,
                     "Group A",
                     "2018-06-14T15:00:00.000Z",

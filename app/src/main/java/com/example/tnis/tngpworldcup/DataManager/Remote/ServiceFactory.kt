@@ -1,6 +1,6 @@
-package com.example.tnis.tngpworldcup.Datamanager.Remote
+package com.example.tnis.tngpworldcup.DataManager.Remote
 
-import com.example.tnis.tngpworldcup.Datamanager.Interceptor.LogJsonInterceptor
+import com.example.tnis.tngpworldcup.DataManager.Interceptor.LogJsonInterceptor
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

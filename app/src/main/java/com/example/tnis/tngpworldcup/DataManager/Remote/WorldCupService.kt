@@ -1,6 +1,6 @@
-package com.example.tnis.tngpworldcup.Datamanager.Remote
+package com.example.tnis.tngpworldcup.DataManager.Remote
 
-import com.example.tnis.tngpworldcup.Datamanager.Model.Match
+import com.example.tnis.tngpworldcup.DataManager.Model.Match
 import kotlin.collections.List
 import retrofit2.http.GET
 import retrofit2.Call

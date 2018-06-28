@@ -6,10 +6,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.tnis.tngpworldcup.Adapter.MatchListAdapter
+import com.example.tnis.tngpworldcup.DataManager.DataManager
 import kotlinx.android.synthetic.main.fragment_match_list.*
 
 class MatchListFragment : Fragment() {
-    private var matchList = arrayListOf<MatchItem>()
+    private val dataManager = DataManager()
 
     companion object {
         fun newInstance(): MatchListFragment {
@@ -31,26 +33,24 @@ class MatchListFragment : Fragment() {
     }
 
     private fun initInstance() {
-        mockListData()
+//        Use this code in Mock Case
         list_football_matches.layoutManager = LinearLayoutManager(activity)
-        list_football_matches.adapter = MatchListAdapter(matchList)
+        list_football_matches.adapter = MatchListAdapter(dataManager.getMockMatchInfo())
+
+//        dataManager.getMatchInfo().enqueue(object : Callback<List<Match>> {
+//            override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
+//                Log.d("Response Body: ", response.body().toString())
+//
+//                list_football_matches.layoutManager = LinearLayoutManager(activity)
+//                list_football_matches.adapter = MatchListAdapter(response.body()!!)
+//            }
+//
+//            override fun onFailure(call: Call<List<Match>>, t: Throwable) {
+//                Toast.makeText(context, "Error message: "
+//                        + t.message, Toast.LENGTH_SHORT).show()
+//            }
+//        })
     }
 
-    private fun mockListData() {
-        var match1 = MatchItem("1")
-        match1.homeTeamUrl = "https://mblwc.cleverapps.io/images/RUS.png"
-        match1.homeTeamName = "Russia"
-        match1.awayTeamUrl = "https://mblwc.cleverapps.io/images/KSA.png"
-        match1.awayTeamName = "Saudi Arabia"
 
-
-        var match2 = MatchItem("2")
-        match2.homeTeamUrl = "https://mblwc.cleverapps.io/images/EGY.png"
-        match2.homeTeamName = "Egypt"
-        match2.awayTeamUrl = "https://mblwc.cleverapps.io/images/URU.png"
-        match2.awayTeamName = "Uruguay"
-
-        matchList.add(match1)
-        matchList.add(match2)
-    }
 }

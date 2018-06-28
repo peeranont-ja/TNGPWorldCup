@@ -1,0 +1,54 @@
+package com.example.tnis.tngpworldcup.Adapter
+
+import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.tnis.tngpworldcup.DataManager.DataManager
+import com.example.tnis.tngpworldcup.DataManager.Model.Match
+import com.example.tnis.tngpworldcup.R
+import kotlinx.android.synthetic.main.match_item.view.*
+
+class MatchListAdapter(private var matchList: List<Match>) : RecyclerView.Adapter<MatchListHolder>() {
+
+    private var dataManager = DataManager()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchListHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.match_item, parent, false)
+        return MatchListHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: MatchListHolder, position: Int) {
+        val countryHome = matchList[position].homeTeamName
+        val countryAway = matchList[position].awayTeamName
+
+        val countryHomeUrl =
+                dataManager.getFlagURL(matchList[position].homeTeamShortName)
+        val countryAwayUrl =
+                dataManager.getFlagURL(matchList[position].awayTeamShortName)
+
+        holder.itemView.text_match_number.text = "Match ${(position + 1)}"
+        holder.itemView.text_home_team_name.text = countryHome
+        holder.itemView.text_away_team_name.text = countryAway
+
+        val option = RequestOptions().centerCrop()
+        Glide.with(holder.itemView.context)
+                .load(countryHomeUrl)
+                .apply(option)
+                .into(holder.itemView.image_flag_home_team)
+        Glide.with(holder.itemView.context)
+                .load(countryAwayUrl)
+                .apply(option)
+                .into(holder.itemView.image_flag_away_team)
+    }
+
+    override fun getItemCount(): Int {
+        return matchList.size
+    }
+
+
+}
+
+class MatchListHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

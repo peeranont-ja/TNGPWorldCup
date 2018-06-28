@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.tnis.tngpworldcup.Datamanager.DataManager
+import com.example.tnis.tngpworldcup.DataManager.DataManager
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 
@@ -40,11 +40,11 @@ class DetailFragment : Fragment() {
         Glide.with(context!!)
                 .load(dataManager.getFlagURL("RUS"))
                 .apply(options)
-                .into(image_home_team)
+                .into(image_flag_home_team)
 
         Glide.with(context!!)
                 .load(dataManager.getFlagURL("KSA"))
                 .apply(options)
-                .into(image_away_team)
+                .into(image_flag_away_team)
     }
 }

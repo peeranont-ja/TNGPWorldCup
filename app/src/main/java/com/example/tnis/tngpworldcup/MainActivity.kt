@@ -3,10 +3,10 @@ package com.example.tnis.tngpworldcup
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.example.tnis.tngpworldcup.Datamanager.Model.Match
+import com.example.tnis.tngpworldcup.DataManager.Model.Match
 import retrofit2.Call
 import android.widget.Toast
-import com.example.tnis.tngpworldcup.Datamanager.DataManager
+import com.example.tnis.tngpworldcup.DataManager.DataManager
 import retrofit2.Callback
 import retrofit2.Response
 

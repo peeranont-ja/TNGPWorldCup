@@ -1,13 +1,14 @@
-package com.example.tnis.tngpworldcup.DataManager
+package com.example.tnis.tngpworldcup.datamanager
 
-import com.example.tnis.tngpworldcup.DataManager.Model.Match
-import com.example.tnis.tngpworldcup.DataManager.Remote.ServiceFactory
+import com.example.tnis.tngpworldcup.datamanager.model.Match
+import com.example.tnis.tngpworldcup.datamanager.remote.model.MatchResponse
+import com.example.tnis.tngpworldcup.datamanager.remote.ServiceFactory
 
 class DataManager {
 
     fun getFlagURL(country: String): String = "https://mblwc.cleverapps.io/images/$country.png"
 
-    fun getMatchInfo(): retrofit2.Call<List<Match>> =  ServiceFactory.worldCupService().getMatchInfo()
+    fun getMatchInfo(): retrofit2.Call<List<MatchResponse>> =  ServiceFactory.worldCupService().getMatchInfo()
 
     fun getMockMatchInfo(): List<Match> = listOf(
             Match(1,

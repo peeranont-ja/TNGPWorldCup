@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.tnis.tngpworldcup.DataManager.DataManager
+import com.example.tnis.tngpworldcup.datamanager.DataManager
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 

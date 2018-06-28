@@ -43,7 +43,7 @@
                 android:layout_below="@id/image_flag_home_team"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
-                android:text="Russia"
+                android:text="Home"
                 android:textSize="22sp" />
         </RelativeLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_below="@id/image_flag_away_team"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
-                android:text="Saudi Arabia"
+                android:text="Away"
                 android:textSize="22sp" />
         </RelativeLayout>
 

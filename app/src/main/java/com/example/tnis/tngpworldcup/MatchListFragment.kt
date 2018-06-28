@@ -3,15 +3,23 @@ package com.example.tnis.tngpworldcup
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.tnis.tngpworldcup.Adapter.MatchListAdapter
-import com.example.tnis.tngpworldcup.DataManager.DataManager
+import android.widget.Toast
+import com.example.tnis.tngpworldcup.adapter.MatchListAdapter
+import com.example.tnis.tngpworldcup.datamanager.DataManager
+import com.example.tnis.tngpworldcup.datamanager.model.Match
+import com.example.tnis.tngpworldcup.datamanager.remote.model.MatchResponse
 import kotlinx.android.synthetic.main.fragment_match_list.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MatchListFragment : Fragment() {
     private val dataManager = DataManager()
+    private lateinit var matchList: List<Match>
 
     companion object {
         fun newInstance(): MatchListFragment {
@@ -34,22 +42,36 @@ class MatchListFragment : Fragment() {
 
     private fun initInstance() {
 //        Use this code in Mock Case
-        list_football_matches.layoutManager = LinearLayoutManager(activity)
-        list_football_matches.adapter = MatchListAdapter(dataManager.getMockMatchInfo())
+//        list_football_matches.layoutManager = LinearLayoutManager(activity)
+//        list_football_matches.adapter = MatchListAdapter(dataManager.getMockMatchInfo())
 
-//        dataManager.getMatchInfo().enqueue(object : Callback<List<Match>> {
-//            override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
-//                Log.d("Response Body: ", response.body().toString())
-//
-//                list_football_matches.layoutManager = LinearLayoutManager(activity)
-//                list_football_matches.adapter = MatchListAdapter(response.body()!!)
-//            }
-//
-//            override fun onFailure(call: Call<List<Match>>, t: Throwable) {
-//                Toast.makeText(context, "Error message: "
-//                        + t.message, Toast.LENGTH_SHORT).show()
-//            }
-//        })
+        dataManager.getMatchInfo().enqueue(object : Callback<List<MatchResponse>> {
+            override fun onResponse(call: Call<List<MatchResponse>>, response: Response<List<MatchResponse>>) {
+                Log.d("Response Body: ", response.body().toString())
+
+                matchList = response.body()!!.map {
+                    Match(
+                            it.matchNo,
+                            it.matchType,
+                            it.startTimeStamp,
+                            it.homeTeamShortName,
+                            it.awayTeamShortName,
+                            it.homeTeamName,
+                            it.awayTeamName,
+                            it.homeScore,
+                            it.awayScore
+                    )
+                }
+
+                list_football_matches.layoutManager = LinearLayoutManager(activity)
+                list_football_matches.adapter = MatchListAdapter(matchList)
+            }
+
+            override fun onFailure(call: Call<List<MatchResponse>>, t: Throwable) {
+                Toast.makeText(context, "Error message: "
+                        + t.message, Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
 

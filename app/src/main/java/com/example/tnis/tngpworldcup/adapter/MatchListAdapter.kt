@@ -1,13 +1,15 @@
-package com.example.tnis.tngpworldcup.Adapter
+package com.example.tnis.tngpworldcup.adapter
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.tnis.tngpworldcup.DataManager.DataManager
-import com.example.tnis.tngpworldcup.DataManager.Model.Match
+import com.example.tnis.tngpworldcup.datamanager.DataManager
+import com.example.tnis.tngpworldcup.datamanager.model.Match
+import com.example.tnis.tngpworldcup.DetailActivity
 import com.example.tnis.tngpworldcup.R
 import kotlinx.android.synthetic.main.match_item.view.*
 
@@ -25,13 +27,18 @@ class MatchListAdapter(private var matchList: List<Match>) : RecyclerView.Adapte
         val countryAway = matchList[position].awayTeamName
 
         val countryHomeUrl =
-                dataManager.getFlagURL(matchList[position].homeTeamShortName)
+                dataManager.getFlagURL(matchList[position].homeTeamShortName!!)
         val countryAwayUrl =
-                dataManager.getFlagURL(matchList[position].awayTeamShortName)
+                dataManager.getFlagURL(matchList[position].awayTeamShortName!!)
 
         holder.itemView.text_match_number.text = "Match ${(position + 1)}"
         holder.itemView.text_home_team_name.text = countryHome
         holder.itemView.text_away_team_name.text = countryAway
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+            holder.itemView.context.startActivity(intent)
+        }
 
         val option = RequestOptions().centerCrop()
         Glide.with(holder.itemView.context)

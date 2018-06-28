@@ -10,7 +10,7 @@ class DetailActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        toolbar.title = "ข้อมูลการแข่งขัน"
+        toolbar.title = "ลายละเอียดการแข่งขัน"
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)

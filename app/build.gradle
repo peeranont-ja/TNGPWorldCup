@@ -41,6 +41,6 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.7.1'
     // Glide //
 
-
+    // Circle ImageView //
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 }

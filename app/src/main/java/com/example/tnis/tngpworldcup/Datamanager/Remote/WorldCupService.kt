@@ -8,4 +8,5 @@ interface WorldCupService {
 
     @GET("api/matches")
     fun getMatchInfo(): Call<List<Match>>
+
 }

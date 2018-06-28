@@ -6,14 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.fragment_detail.*
-import kotlinx.android.synthetic.main.fragment_main.*
-import com.bumptech.glide.load.resource.bitmap.TransformationUtils.centerCrop
 import com.bumptech.glide.request.RequestOptions
-
+import com.example.tnis.tngpworldcup.Datamanager.DataManager
+import kotlinx.android.synthetic.main.fragment_detail.*
 
 
 class DetailFragment : Fragment() {
+
+    private val dataManager = DataManager()
+
     companion object {
         fun newInstance(): DetailFragment {
             return DetailFragment()
@@ -37,12 +38,12 @@ class DetailFragment : Fragment() {
         val options = RequestOptions().fitCenter()
 
         Glide.with(context!!)
-                .load("https://mblwc.cleverapps.io/images/RUS.png")
+                .load(dataManager.getFlagURL("RUS"))
                 .apply(options)
                 .into(img_home_team)
 
         Glide.with(context!!)
-                .load("https://mblwc.cleverapps.io/images/KSA.png")
+                .load(dataManager.getFlagURL("KSA"))
                 .apply(options)
                 .into(img_away_team)
     }

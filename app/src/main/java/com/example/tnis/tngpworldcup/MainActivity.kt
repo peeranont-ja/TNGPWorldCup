@@ -6,7 +6,7 @@ import android.util.Log
 import com.example.tnis.tngpworldcup.Datamanager.Model.Match
 import retrofit2.Call
 import android.widget.Toast
-import com.example.tnis.tngpworldcup.Datamanager.Datamanager
+import com.example.tnis.tngpworldcup.Datamanager.DataManager
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, MainFragment.newInstance())
                 .commit()
 
-        val data = Datamanager()
+        val data = DataManager()
 
         data.getMatchInfo().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
-                Log.d("retrofit",response.body().toString())
+                Log.d("Retrofit",response.body().toString())
             }
 
             override  fun onFailure(call: Call<List<Match>>, t: Throwable) {

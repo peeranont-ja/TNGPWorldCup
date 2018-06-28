@@ -55,8 +55,6 @@ class MainFragment : Fragment() {
         //Add delay to show the Progress bar before intent to next page
         Handler().postDelayed({
             //Actions after delay
-            //Hide Progress bar
-            progressBar.visibility = View.GONE
 
             //Enable button
             btn_play.isEnabled = true
@@ -64,6 +62,9 @@ class MainFragment : Fragment() {
             //Intent to next page
             val intent = Intent(activity, DetailActivity::class.java)
             startActivity(intent)
+
+            //Hide Progress bar
+            progressBar.visibility = View.GONE
 
         }, 1500)
     }

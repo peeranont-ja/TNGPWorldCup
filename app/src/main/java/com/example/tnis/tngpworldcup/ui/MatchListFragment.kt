@@ -13,6 +13,8 @@ import com.example.tnis.tngpworldcup.adapter.MatchListAdapter
 import com.example.tnis.tngpworldcup.datamanager.DataManager
 import com.example.tnis.tngpworldcup.datamanager.model.Match
 import com.example.tnis.tngpworldcup.datamanager.remote.model.MatchResponse
+import kotlinx.android.synthetic.main.fragment_detail.*
+import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_match_list.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,6 +48,7 @@ class MatchListFragment : Fragment() {
 //        list_football_matches.layoutManager = LinearLayoutManager(activity)
 //        list_football_matches.adapter = MatchListAdapter(dataManager.getMockMatchInfo())
 
+        progress.visibility = View.VISIBLE
         dataManager.getMatchInfo().enqueue(object : Callback<List<MatchResponse>> {
             override fun onResponse(call: Call<List<MatchResponse>>, response: Response<List<MatchResponse>>) {
                 Log.d("Response Body: ", response.body().toString())
@@ -63,6 +66,7 @@ class MatchListFragment : Fragment() {
                             it.awayScore
                     )
                 }
+                progress.visibility = View.GONE
                 list_football_matches.layoutManager = LinearLayoutManager(activity)
                 list_football_matches.adapter = MatchListAdapter(matchList)
             }
@@ -70,6 +74,7 @@ class MatchListFragment : Fragment() {
             override fun onFailure(call: Call<List<MatchResponse>>, t: Throwable) {
                 Toast.makeText(context, "Error message: "
                         + t.message, Toast.LENGTH_SHORT).show()
+                progress.visibility = View.GONE
             }
         })
     }

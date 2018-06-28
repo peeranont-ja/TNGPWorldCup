@@ -15,9 +15,9 @@
 
     <TextView
         android:id="@+id/text_start_time"
-        android:layout_below="@id/text_group_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/text_group_name"
         android:layout_centerHorizontal="true"
         android:text="00:00"
         android:textSize="16sp" />

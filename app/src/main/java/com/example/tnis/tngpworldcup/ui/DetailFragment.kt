@@ -12,9 +12,7 @@ import com.example.tnis.tngpworldcup.datamanager.DataManager
 import com.example.tnis.tngpworldcup.datamanager.model.Match
 import kotlinx.android.synthetic.main.fragment_detail.*
 import java.time.LocalDateTime
-import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 
 class DetailFragment : Fragment() {
@@ -47,10 +45,10 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpView()
+        initInstance()
     }
 
-    private fun setUpView(){
+    private fun initInstance(){
         val options = RequestOptions().fitCenter()
 
         val isoFormat = (DateTimeFormatter.ISO_DATE_TIME)

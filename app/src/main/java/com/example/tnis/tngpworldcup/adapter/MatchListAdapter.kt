@@ -31,7 +31,7 @@ class MatchListAdapter(private var matchList: List<Match>) : RecyclerView.Adapte
         val countryAwayUrl =
                 dataManager.getFlagURL(matchList[position].awayTeamShortName!!)
 
-        holder.itemView.text_match_number.text = "Match ${(position + 1)}"
+        holder.itemView.text_match_number.text = "Match ${position + 1}"
         holder.itemView.text_home_team_name.text = countryHome
         holder.itemView.text_away_team_name.text = countryAway
 

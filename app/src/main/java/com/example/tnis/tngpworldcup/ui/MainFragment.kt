@@ -11,17 +11,17 @@ import com.bumptech.glide.Glide
 import com.example.tnis.tngpworldcup.R
 import kotlinx.android.synthetic.main.fragment_main.*
 
+//Extend Fragment
 class MainFragment : Fragment() {
 
+    //Static Method for Activity to call new instance
     companion object {
         fun newInstance(): MainFragment {
-            val fragment = MainFragment()
-            val args = Bundle()
-            fragment.arguments = args
-            return fragment
+            return MainFragment()
         }
     }
 
+    //Link XML to the fragment
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -29,12 +29,14 @@ class MainFragment : Fragment() {
                 container, false)
     }
 
+    //Set up view actions when view is already created
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpView()
+        initInstance()
     }
 
-    private fun setUpView() {
+    //Function to define view actions
+    private fun initInstance() {
         //Use Glide to display image from URL show in view ID name's "fullscreen_background"
         Glide.with(context!!)
                 .load("https://img.aws.livestrongcdn.com/" +
@@ -52,6 +54,7 @@ class MainFragment : Fragment() {
         }
     }
 
+    //Spin off function to make code easy to understand the flow
     private fun goToNextPage() {
         //Add delay to show the Progress bar before intent to next page
         Handler().postDelayed({
@@ -67,6 +70,6 @@ class MainFragment : Fragment() {
             //Hide Progress bar
             progress_bar.visibility = View.GONE
 
-        }, 1500)
+        }, 1500) //Delay time is in a millisecond unit
     }
 }

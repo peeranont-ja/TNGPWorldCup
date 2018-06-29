@@ -11,14 +11,14 @@ import com.example.tnis.tngpworldcup.datamanager.DataManager
 import com.example.tnis.tngpworldcup.datamanager.model.Match
 import com.example.tnis.tngpworldcup.ui.DetailActivity
 import com.example.tnis.tngpworldcup.R
-import kotlinx.android.synthetic.main.match_item.view.*
+import kotlinx.android.synthetic.main.item_match.view.*
 
 class MatchListAdapter(private var matchList: List<Match>) : RecyclerView.Adapter<MatchListHolder>() {
 
     private var dataManager = DataManager()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchListHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.match_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_match, parent, false)
         return MatchListHolder(view)
     }
 

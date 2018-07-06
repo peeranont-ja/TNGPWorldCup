@@ -5,14 +5,14 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/fullscreen_background"
+        android:id="@+id/img_fullscreen_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
 
     <ImageView
-        android:id="@+id/image_world_cup_trophy"
+        android:id="@+id/img_world_cup_trophy"
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_centerHorizontal="true"
@@ -21,9 +21,10 @@
         android:src="@drawable/img_world_cup_trophy_2018" />
 
     <TextView
+        android:id="@+id/text_world_cup_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image_world_cup_trophy"
+        android:layout_below="@id/img_world_cup_trophy"
         android:layout_centerHorizontal="true"
         android:text="@string/world_cup_date"
         android:textColor="@android:color/background_dark"

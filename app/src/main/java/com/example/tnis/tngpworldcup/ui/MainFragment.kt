@@ -41,7 +41,7 @@ class MainFragment : Fragment() {
         Glide.with(context!!)
                 .load("https://img.aws.livestrongcdn.com/" +
                         "ls-article-image-673/ds-photo/getty/article/190/90/118254260.jpg")
-                .into(fullscreen_background)
+                .into(img_fullscreen_background)
 
         btn_play.setOnClickListener {
             //Show Progress bar

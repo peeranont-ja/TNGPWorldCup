@@ -20,10 +20,12 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, DetailFragment.newInstance(matchInfo))
-                .commit()
+        if(savedInstanceState == null ) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, DetailFragment.newInstance(matchInfo))
+                    .commit()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

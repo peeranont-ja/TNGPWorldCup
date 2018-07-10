@@ -21,10 +21,12 @@ class MatchListActivity: AppCompatActivity() {
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         //Add MatchListFragment to MatchListActivity
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, MatchListFragment.newInstance())
-                .commit()
+        if(savedInstanceState == null ) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, MatchListFragment.newInstance())
+                    .commit()
+        }
     }
 
     //Override function for defining action of Back button
